@@ -24,8 +24,13 @@
         </li>
       </ul>
       <div class="d-flex">
-        <a href="signin.php" class="btn me-2" style="background-color: #404040; color: #fff;">Register</a>
-        <a href="signin.php" class="btn" style="background-color: #D9C3A9;">Sign In</a>
+        <?php if(isset($_SESSION["user"])) { ?>
+            <p>Welcome, <?= $_SESSION["first_name"]; ?></p>
+            <a href="index.php?logout='0'" class="btn btn-danger">Sign Out</a>
+        <?php } else { ?>
+            <a href="register.php" class="btn me-2" style="background-color: #404040; color: #fff;">Register</a>
+            <a href="signin.php" class="btn" style="background-color: #D9C3A9;">Sign In</a>
+        <?php } ?>
       </div>
     </div>
   </div>

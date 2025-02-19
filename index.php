@@ -47,7 +47,7 @@
                     <div class="row mt-3">
                         <div class="col-12 col-md-4 col-lg-4"> <!-- มีการแบ่ง layout ให้แล้วลองดูว่าควรเขียนตรงไหน -->
                             <div class="card">
-                                <img src="img/ดึงจาก-database">
+                                <img src="ดึงจาก-database">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         Name of Coffee ( ไปดึงใน database มาแสดง )

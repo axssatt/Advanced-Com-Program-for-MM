@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 18, 2025 at 10:43 AM
+-- Generation Time: Feb 18, 2025 at 10:49 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -29,6 +29,7 @@ USE `coffee_shop`;
 -- Table structure for table `coffeeBeans`
 --
 
+DROP TABLE IF EXISTS `coffeeBeans`;
 CREATE TABLE `coffeeBeans` (
   `coffeeBeans_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -44,6 +45,7 @@ CREATE TABLE `coffeeBeans` (
 -- Table structure for table `menu`
 --
 
+DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -56,10 +58,11 @@ CREATE TABLE `menu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mugs_id`
+-- Table structure for table `mugs`
 --
 
-CREATE TABLE `mugs_id` (
+DROP TABLE IF EXISTS `mugs`;
+CREATE TABLE `mugs` (
   `mugs_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` varchar(250) NOT NULL,
@@ -85,9 +88,9 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`menu_id`);
 
 --
--- Indexes for table `mugs_id`
+-- Indexes for table `mugs`
 --
-ALTER TABLE `mugs_id`
+ALTER TABLE `mugs`
   ADD PRIMARY KEY (`mugs_id`);
 
 --
@@ -107,9 +110,9 @@ ALTER TABLE `menu`
   MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `mugs_id`
+-- AUTO_INCREMENT for table `mugs`
 --
-ALTER TABLE `mugs_id`
+ALTER TABLE `mugs`
   MODIFY `mugs_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
