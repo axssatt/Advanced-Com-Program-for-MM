@@ -1,3 +1,16 @@
+<?php
+include 'php/config.php';
+$userQuery1 = "SELECT * FROM coffeebeans WHERE coffeeBeans_id = '3' " ;
+$userQuery2 = "SELECT * FROM menu WHERE menu_id = '4' " ;
+$userQuery3 = "SELECT * FROM menu WHERE menu_id = '11' " ;
+$result1 = mysqli_query($connect,$userQuery1);
+$result2 = mysqli_query($connect,$userQuery2);
+$result3 = mysqli_query($connect,$userQuery3);
+$row1 = mysqli_fetch_assoc($result1);
+$row2 = mysqli_fetch_assoc($result2);
+$row3 = mysqli_fetch_assoc($result3);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +30,10 @@
             </div>
             <div class="col-12 col-md-10 col-lg-10">
                 <!-- เริ่มเขียนโค้ดตรงนี้ -->
+                 <div class="preface">
+                    <p class="fs-4 text-center">Brewed with Love, Deliver to You</p>
+                    <p class="fs-6 text-center">Explore our fresh coffee, premium bean, and stylish mugs</p>
+                 </div>
                 <div class="row">
                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -45,25 +62,40 @@
                         <h4>Featured products</h4>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-12 col-md-4 col-lg-4"> <!-- มีการแบ่ง layout ให้แล้วลองดูว่าควรเขียนตรงไหน -->
-                            <div class="card">
+
+                        <div class="col-12 col-md-4 col-lg-4"> <!-- มีการแบ่ง layout ให้แล้วลองดูว่าควรเขียนตรงไหน --> 
+                        <div class="card">
                                 <img src="ดึงจาก-database">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        Name of Coffee ( ไปดึงใน database มาแสดง )
+                                        <?php echo $row1['name']; ?>
                                     </h5>
                                     <p class="card-text">
-                                        Description ( ไปดึงใน database มาแสดง )
+                                        <?php echo $row1['description']?>
                                     </p>
                                     <a href="หน้าในใส่เอง" class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
-                            
+                        <div class="card">
+                            <img src="#">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row2['name']?></h5>
+                                <p class="card-text"><?php echo $row2['name']?></p>
+                                <a href="หน้าในใส่เอง" class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
+                            </div>
+                        </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
-                            
+                        <div class="card">
+                            <img src="#">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row3['name']?></h5>
+                                <p class="card-text"><?php echo $row3['description']?></p>
+                                <a href="หน้าในใส่เอง" class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
