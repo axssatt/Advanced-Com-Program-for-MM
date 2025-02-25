@@ -15,6 +15,7 @@
         $_SESSION['firstname'] = $row['firstname'];
         $_SESSION['lastname'] = $row['lastname'];
         $_SESSION['role'] = $row['role'];
+        $_SESSION['id'] = $row['user_id'];
         header("Location: ../index.php");
     }
 ?>

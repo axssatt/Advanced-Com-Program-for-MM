@@ -36,7 +36,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
-                                <a href="orderMenu.php?id=<?= $menu['menu_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['menu_id']; ?>" class="btn btn-primary">Order</a>
                             </div>
                         </div>
                     </div>

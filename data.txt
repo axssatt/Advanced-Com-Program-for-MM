@@ -58,3 +58,20 @@ Bagel
 Freshly baked bagel with a chewy texture, available in various flavors—perfect for breakfast or a quick snack.
 120
 100
+
+--coffee bean--
+Espresso
+Bold, rich dark roast with deep chocolate and caramel notes, ideal for intense espresso shots and beverages.
+300
+
+Maple Pecan
+Flavored coffee blending sweet maple and nutty pecan, offering a warm, inviting aroma and comforting medium roast.
+300
+
+Pike Place Roast
+Classic medium roast with balanced flavors of chocolate and toasted nuts, perfect for any time of day.
+300
+
+Caramel
+Concentrated, bold coffee shot brewed under pressure, delivering intense flavor and rich crema—perfect as a base drink.
+300

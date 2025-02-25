@@ -43,13 +43,13 @@ include 'php/config.php';
                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="img/Banner1.JPG" class="d-block w-100" alt="banner">
+                            <img src="material/img/Banner1.JPG" class="d-block w-100" alt="banner">
                             </div>
                             <div class="carousel-item">
-                            <img src="img/Banner2(1).JPG" class="d-block w-100" alt="banner">
+                            <img src="material/img/Banner2(1).JPG" class="d-block w-100" alt="banner">
                             </div>
                             <div class="carousel-item">
-                            <img src="img/Banner2.JPG" class="d-block w-100" alt="banner">
+                            <img src="material/img/Banner2.JPG" class="d-block w-100" alt="banner">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -70,7 +70,7 @@ include 'php/config.php';
 
                         <div class="col-12 col-md-4 col-lg-4"> <!-- มีการแบ่ง layout ให้แล้วลองดูว่าควรเขียนตรงไหน --> 
                         <div class="card">
-                                <img src="ดึงจาก-database">
+                                <img src="img-upload/<?= $row1['img']; ?>">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <?php echo $row1['name']; ?>
@@ -78,7 +78,7 @@ include 'php/config.php';
                                     <p class="card-text">
                                         <?php echo $row1['description']?>
                                     </p>
-                                    <a href="หน้าในใส่เอง" class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
+                                    <a href="orderMenu.php?id<?= $row1['menu_id']; ?>" class="btn" style="background-color: #404040; color: #fff;">Order</a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ include 'php/config.php';
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row2['name']?></h5>
                                 <p class="card-text"><?php echo $row2['name']?></p>
-                                <a href="หน้าในใส่เอง" class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
+                                <a class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
                             </div>
                         </div>
                         </div>

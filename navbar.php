@@ -40,6 +40,7 @@
             <span class="navbar-text me-4" style="color: #FFF4F4;">
                 Welcome, <?php echo $_SESSION['firstname']; ?>
             </span>
+            <a href="cart.php?id=<?= $_SESSION['id']; ?>"><img src="material/shopping-cart.png" width="30px" height="30px" class="me-3 mt-1"></a>
             <a href="index.php?logout='0'" class="btn btn-danger">Sign Out</a>
         <?php } else { ?>
             <a href="register.php" class="btn me-3" style="background-color: #404040; color: #fff4f4;">Register</a>
