@@ -1,14 +1,20 @@
 <?php
+session_start();
 include 'php/config.php';
-$userQuery1 = "SELECT * FROM coffeebeans WHERE coffeeBeans_id = '3' " ;
-$userQuery2 = "SELECT * FROM menu WHERE menu_id = '4' " ;
-$userQuery3 = "SELECT * FROM menu WHERE menu_id = '11' " ;
-$result1 = mysqli_query($connect,$userQuery1);
-$result2 = mysqli_query($connect,$userQuery2);
-$result3 = mysqli_query($connect,$userQuery3);
-$row1 = mysqli_fetch_assoc($result1);
-$row2 = mysqli_fetch_assoc($result2);
-$row3 = mysqli_fetch_assoc($result3);
+    $userQuery1 = "SELECT * FROM coffeebeans WHERE coffeeBeans_id = '3' " ;
+    $userQuery2 = "SELECT * FROM menu WHERE menu_id = '4' " ;
+    $userQuery3 = "SELECT * FROM menu WHERE menu_id = '11' " ;
+    $result1 = mysqli_query($connect,$userQuery1);
+    $result2 = mysqli_query($connect,$userQuery2);
+    $result3 = mysqli_query($connect,$userQuery3);
+    $row1 = mysqli_fetch_assoc($result1);
+    $row2 = mysqli_fetch_assoc($result2);
+    $row3 = mysqli_fetch_assoc($result3);
+
+    if(isset($_GET['logout'])) {
+        session_destroy();
+        header("refresh:0; url=index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,19 +24,18 @@ $row3 = mysqli_fetch_assoc($result3);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php include_once "navbar.php"; ?>
     <div class="container-fluid my-2">
         <div class="row">
-            <div class="col col-md-1 col-lg-1">
+            <div class="col col-md-1 col-lg-2">
                 <!-- ห้าม!เขียนโค้ดตรงนี้ สาป -->
             </div>
-            <div class="col-12 col-md-10 col-lg-10">
+            <div class="col-12 col-md-10 col-lg-8">
                 <!-- เริ่มเขียนโค้ดตรงนี้ -->
-                 <div class="preface">
+                 <div class="my-4">
                     <p class="fs-4 text-center">Brewed with Love, Deliver to You</p>
                     <p class="fs-6 text-center">Explore our fresh coffee, premium bean, and stylish mugs</p>
                  </div>
@@ -100,7 +105,7 @@ $row3 = mysqli_fetch_assoc($result3);
                     </div>
                 </div>
             </div>
-            <div class="col col-md-1 col-lg-1">
+            <div class="col col-md-1 col-lg-2">
                 <!-- ห้าม!เขียนโค้ดตรงนี้ สาป -->
             </div>
         </div>

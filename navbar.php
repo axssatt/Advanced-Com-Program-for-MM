@@ -1,9 +1,5 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #6F8C51;">
   <div class="container-fluid">
-    <!-- <a href="index.php" class="navbar-brand" style="color: #FFF4F4;">
-        <img src="img/cake.png" height="48px" width="48px">
-        มากินหนม
-    </a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,22 +19,20 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php" style="color: #FFF4F4;">About Us</a>
+          <a class="nav-link active" aria-current="page" href="aboutus.php" style="color: #FFF4F4;">About Us</a>
         </li>
           <?php if (isset($_SESSION['role'])) { ?>
             <?php if($_SESSION['role'] == "admin") { ?>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="add_menu.php" style="color: #FFF4F4;">เพิ่มเมนูอาหาร</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="menu.php" style="color: #FFF4F4;">แก้ไข/ลบเมนูอาหาร</a>
-          </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="add_user.php" style="color: #FFF4F4;">เพิ่มบัญชีผู้ใช้งาน</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="user.php" style="color: #FFF4F4;">แก้ไข/ลบบัญชีผู้ใช้งาน</a>
-              </li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFF4F4;">
+                Admin Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="manage_menu.php">Menu</a></li>
+                <li><a class="dropdown-item" href="manage_orders.php">Orders</a></li>
+                <li><a class="dropdown-item" href="manage_users.php">Users</a></li>
+              </ul>
+            </li>
             <?php } }?>
       </ul>
       <form class="d-flex" role="search">

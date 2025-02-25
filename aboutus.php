@@ -1,3 +1,7 @@
+<?php  
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +9,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php include_once "navbar.php"; ?>
-        <div class="container-fluid my-2">
+        <div class="container-fluid my-3">
             <div class="row">
-                    <h2 class="text-center">About Us</h2>
-                <div class="card">
-                    <h4 class="text-center">672115054 Nattharawipa Wilimphodchaphornkul</h4>
-                    <h4 class="text-center">672115056 Punmanus Atama</h4>
-                    <h4 class="text-center">672115058 Saruta Kaoian</h4>
+                <div class="col col-md-1 col-lg-2">
+
                 </div>
-            
-            </div>
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="row">
+                        <h2 class="text-center mb-3">Abous Us</h2>
+                    </div>
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body mt-3">
+                                <div class="card-text">
+                                    <p class="fs-6">672115054 Nattharawipa Wilimphodchaphornkul</p>
+                                    <p class="fs-6">672115056 Punmanus Atama</p>
+                                    <p class="fs-6">672115058 Saruta Kaoian</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-1 col-lg-2">
+
+                </div>
             </div>
         </div>
+    <?php include_once "footer.php"; ?>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

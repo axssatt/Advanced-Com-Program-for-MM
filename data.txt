@@ -1,0 +1,60 @@
+--menu--
+Espresso
+Concentrated, bold coffee shot brewed under pressure, delivering intense flavor and rich crema—perfect as a base drink.
+65
+100
+
+Coffee Latte
+Smooth chilled espresso combined with milk, creating a creamy, refreshing drink ideal for warm days.
+85
+100
+
+Caramel Macchiato
+Sweet cold drink layering milk, espresso, and caramel sauce for a delightful blend of flavors and textures.
+85
+100
+
+Iced Americano
+Refreshing beverage made from diluted espresso and cold water over ice, offering bold flavor without heaviness.
+85
+100
+
+Green Tea Frappe
+Chilled green tea blend with ice and milk, offering a refreshing, light flavor for tea lovers.
+75
+100
+
+Panda Cocoa
+Iced cocoa topped with fluffy milk foam and cocoa powder panda face, combining fun presentation with rich chocolate flavor.
+75
+100
+
+White Malt Ship
+Creamy malt beverage combining white chocolate and malt flavors for a sweet, comforting drink experience.
+75
+100
+
+Iced Chocolate
+Rich iced chocolate drink made from syrup, cold milk, and ice, providing a decadent treat for chocolate lovers.
+75
+100
+
+Muffin
+Soft, fluffy muffin available in various flavors, perfect for a quick snack or breakfast alongside your coffee.
+60
+100
+
+Bacon Omelet Puff
+Savory pastry filled with fluffy eggs and crispy bacon, offering a hearty and satisfying snack option.
+120
+100
+
+Brownie
+Rich, fudgy brownie with deep chocolate flavor, providing a deliciously sweet indulgence for dessert lovers.
+90
+100
+
+Bagel
+Freshly baked bagel with a chewy texture, available in various flavors—perfect for breakfast or a quick snack.
+120
+100
