@@ -20,6 +20,8 @@
 
             if($result){
                 echo "<script>alert('add menu successfully!'); window.location = '../manage_menu.php';</script>";
+            } else {
+                echo "<script>alert(can not add menu into database, please try agian'); window.location = '../createMenu.php';</script>";
             }
         }
     }
