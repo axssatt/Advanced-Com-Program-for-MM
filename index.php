@@ -28,8 +28,8 @@ include 'php/config.php';
 </head>
 <body>
     <?php include_once "navbar.php"; ?>
-    <div class="container-fluid my-2">
-        <div class="row">
+    <div class="container-fluid my-2 wrapper">
+        <div class="row content">
             <div class="col col-md-1 col-lg-2">
                 <!-- ห้าม!เขียนโค้ดตรงนี้ สาป -->
             </div>

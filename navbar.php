@@ -29,6 +29,8 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="manage_menu.php">Menu</a></li>
+                <li><a class="dropdown-item" href="manage_coffeeBeans.php">Coffee Beans</a></li>
+                <li><a class="dropdown-item" href="manage_mug.php">Mugs</a></li>
                 <li><a class="dropdown-item" href="manage_orders.php">Orders</a></li>
                 <li><a class="dropdown-item" href="manage_users.php">Users</a></li>
               </ul>
