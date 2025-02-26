@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php
     session_start();
     require_once "config.php";
@@ -9,7 +12,19 @@
     $result = mysqli_query($connect, $query);
 
     if(mysqli_num_rows($result) == 0) {
-        echo "<script>alert('username or password is incorrect please try again'); window.location = '../index.php';</script>";
+        echo "<script>
+            $(document).ready(function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Sorry',
+                    text: 'username or password is incorrect, please try agian'
+                }).then((result) => {
+                    if(result.isConfirmed) {
+                        window.location.href = '../signin.php';
+                    }
+                });
+            });
+        </script>";
     } else {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['firstname'] = $row['firstname'];

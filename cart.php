@@ -46,6 +46,7 @@
                                     <th>Name of menu</th>
                                     <th>Quantity</th>
                                     <th>Unit price (฿)</th>
+                                    <th>Total price (฿)</th>
                                     <th style="width: 100px;">Delete</th>
                                 </tr>
                             </thead>
@@ -55,9 +56,15 @@
                                     <td><?= $allMenu['name']; ?></td>
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
-                                    <td><a href="cart.php?del=<?= $allMenu['order_id']; ?>" class="btn btn-danger">Delete</a></td>
+                                    <td><?php echo number_format($itemPrice = $allMenu['qty'] * $allMenu['price'], 2); ?></td>
+                                    <td><a href="cart.php?del=<?= $allMenu['order_id']; ?>" class="btn btn-danger w-100">Delete</a></td>
                                 </tr>
                                 <?php }  ?>
+                                <tr>
+                                    <td colspan="3" align="center">Total : </td>
+                                    <td colspan="1"><?php $final_price = 0; $final_price += $itemPrice; echo number_format($final_price, 2); ?></td>
+                                    <td colspan="1"><a href="confirmOrder.php" class="btn btn-success w-100">Confirm</a></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
