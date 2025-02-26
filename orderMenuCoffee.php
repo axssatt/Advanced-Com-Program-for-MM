@@ -6,9 +6,9 @@
         echo "<script>alert('Please sign in first!'); window.location = 'signin.php'</script>";
     }
 
-    $menuID = $_GET['id'];
+    $goodID = $_GET['id'];
 
-    $query = "SELECT * FROM menu WHERE menu_id = '$menuID'";
+    $query = "SELECT * FROM goods WHERE goods_id = '$goodID'";
     $result = mysqli_query($connect, $query);
 
     $menu = mysqli_fetch_array($result);
@@ -35,10 +35,10 @@
                 <div class="row my-4">
                     <p class="text-center fs-5">Order menu</p>
                 </div>
-                <div class="row my-2">
+                <div class="row mb-3">
                     <div class="card mb-5">
                         <div class="row">
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 p-0">
                                 <img src="img-upload/<?= $menu['img'] ?>" class="img-fluid rounded-start">
                             </div>
                             <div class="col-12 col-md-8">
@@ -51,12 +51,13 @@
                                                 <label for="numberInput" class="form-label">Quantity</label>
                                                 <div class="input-group">
                                                     <button class="btn btn-danger" id="btnMinus" type="button">−</button>
-                                                    <input type="number" id="numberInput" class="form-control text-center" value="1" min="0">
+                                                    <input type="number" id="numberInput" class="form-control text-center" value="1" min="0" name="qty">
+                                                    <input type="hidden" name="itemID" value="<?= $goodID; ?>">
                                                     <button class="btn btn-success" id="btnPlus" type="button">+</button>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-4">
-                                                <input type="submit" value="Add to card" class="btn btn w-100" style="background-color: #47663B; color: #fff;margin-top: 32px;" name="card">
+                                                <input type="submit" value="Add to card" class="btn btn w-100" style="background-color: #47663B; color: #fff;margin-top: 32px;" name="cart">
                                             </div>
                                             <div class="col-12 col-md-4">
                                                 <input type="submit" value="Order now" class="btn btn w-100" style="background-color: #EED3B1; color: #000;margin-top: 32px;" name="order">

@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM menu";
+                                $query = "SELECT * FROM goods";
                                 $result = mysqli_query($connect, $query);
 
                                 if(mysqli_num_rows($result) >= 1) {

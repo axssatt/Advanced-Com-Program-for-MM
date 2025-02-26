@@ -28,7 +28,7 @@
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
-                <?php $queryMenuCoffee = "SELECT * FROM menu WHERE Coffee = 'yes'"; 
+                <?php $queryMenuCoffee = "SELECT * FROM goods WHERE Coffee = 'yes'"; 
                     $result = mysqli_query($connect, $queryMenuCoffee);
 
                     while ($menu = mysqli_fetch_assoc($result)) {
@@ -40,7 +40,7 @@
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
                                 <p style="font-size: 25px;"><?= $menu['price']; ?>฿</p>
-                                <a href="orderMenuCoffee.php?id=<?= $menu['menu_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn-primary">Order</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
-                <?php $queryMenuCoffee = "SELECT * FROM menu WHERE Coffee = 'no'"; 
+                <?php $queryMenuCoffee = "SELECT * FROM goods WHERE Coffee = 'no'"; 
                     $result = mysqli_query($connect, $queryMenuCoffee);
 
                     while ($menu = mysqli_fetch_assoc($result)) {
@@ -63,7 +63,7 @@
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
                                 <p style="font-size: 25px;"><?= $menu['price']; ?>฿</p>
-                                <a href="orderMenuCoffee.php?id=<?= $menu['menu_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn-primary">Order</a>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
-                <?php $queryMenuCoffee = "SELECT * FROM menu WHERE Coffee = 'des'"; 
+                <?php $queryMenuCoffee = "SELECT * FROM goods WHERE Coffee = 'des'"; 
                     $result = mysqli_query($connect, $queryMenuCoffee);
 
                     while ($menu = mysqli_fetch_assoc($result)) {
@@ -86,7 +86,7 @@
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
                                 <p style="font-size: 25px;"><?= $menu['price']; ?>฿</p>
-                                <a href="orderMenuCoffee.php?id=<?= $menu['menu_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn-primary">Order</a>
                             </div>
                         </div>
                     </div>

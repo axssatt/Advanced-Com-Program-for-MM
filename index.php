@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'php/config.php';
-    $userQuery1 = "SELECT * FROM coffeebeans WHERE coffeeBeans_id = '3' " ;
-    $userQuery2 = "SELECT * FROM menu WHERE menu_id = '4' " ;
-    $userQuery3 = "SELECT * FROM menu WHERE menu_id = '11' " ;
+    $userQuery1 = "SELECT * FROM goods WHERE goods_id = '3' " ;
+    $userQuery2 = "SELECT * FROM goods WHERE goods_id = '4' " ;
+    $userQuery3 = "SELECT * FROM goods WHERE goods_id = '11' " ;
     $result1 = mysqli_query($connect,$userQuery1);
     $result2 = mysqli_query($connect,$userQuery2);
     $result3 = mysqli_query($connect,$userQuery3);

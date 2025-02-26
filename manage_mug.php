@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM mugs";
+                                $query = "SELECT * FROM goods WHERE Coffee = 'mug'";
                                 $result = mysqli_query($connect, $query);
 
                                 if(mysqli_num_rows($result) >= 1) {

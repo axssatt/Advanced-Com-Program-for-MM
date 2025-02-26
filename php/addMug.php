@@ -14,7 +14,7 @@
             $price = $_POST['price'];
             $quantity = $_POST['quantity'];
 
-            $query = "INSERT INTO mugs (`name`, `description`, price, quantity, img) VALUES ('$name', '$description', '$price', '$quantity', '".$fileName."')";
+            $query = "INSERT INTO goods (`name`, `description`, price, quantity, img, Coffee) VALUES ('$name', '$description', '$price', '$quantity', '".$fileName."', 'mug')";
             $result = mysqli_query($connect, $query);
 
             if($result){
