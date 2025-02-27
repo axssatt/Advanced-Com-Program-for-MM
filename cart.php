@@ -68,7 +68,7 @@
                                 <tr>
                                     <td colspan="3" align="center">Total : </td>
                                     <td colspan="1"><?php echo number_format($final_price, 2); ?></td> <!-- Display final price -->
-                                    <td colspan="1"><a href="confirmOrder.php" class="btn btn-success w-100">Confirm</a></td>
+                                    <td colspan="1"><a href="orderSum.php" class="btn btn-success w-100">Confirm</a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

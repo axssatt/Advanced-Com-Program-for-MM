@@ -21,10 +21,10 @@
             </div>
             <div class="col-12 col-md-10 col-lg-10">
                 <div class="row">
-                    <p class="text-center fs-4">Menu</p>
+                    <p class="text-center fs-1">Menu</p>
                 </div>
                 <div>
-                    <p class="text-start fs-6">Mugs</p>
+                    <p class="text-start fs-3">Mugs</p>
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->

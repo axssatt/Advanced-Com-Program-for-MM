@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title >Menu</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,10 +21,10 @@
             </div>
             <div class="col-12 col-md-10 col-lg-10">
                 <div class="row">
-                    <p class="text-center fs-4">Menu</p>
+                    <p class="text-center fs-1">Menu</p>
                 </div>
                 <div>
-                    <p class="text-start fs-6">Coffee</p>
+                    <p class="text-start fs-3">Coffee</p>
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
@@ -47,7 +47,7 @@
                 <?php } ?>
                 </div>
                 <div>
-                    <p class="text-start fs-6">Non Coffee</p>
+                    <p class="text-start fs-3">Non Coffee</p>
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
@@ -70,7 +70,7 @@
                 <?php } ?>
                 </div>
                 <div>
-                    <p class="text-start fs-6">Dessert</p>
+                    <p class="text-start fs-3">Dessert</p>
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
