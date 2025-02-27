@@ -25,6 +25,8 @@ if(isset($_GET['del'])) {
     <title>Coffee Beans</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <?php include_once "navbar.php" ?>
@@ -55,7 +57,7 @@ if(isset($_GET['del'])) {
                                 <tr>
                                     <td><?= $menu['name']; ?></td>
                                     <td><a href="updateMenu.php?id=<?= $menu['goods_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
-                                    <td><a data-id="<?= $menu['goods_id'];?>" href="manage_coffeeBeans.php?del=<?= $menu['goods_id']; ?>" class="btn btn-danger w-100 delete-bttn">Delete</a></td>
+                                    <td><a data-id="<?= $menu['goods_id'];?>" href="manage_coffeeBeans.php?del=<?= $menu['goods_id']; ?>" class="btn btn-danger w-100 delete-btn">Delete</a></td>
                                 </tr>
                             <?php } } ?>
                             <tr>
@@ -101,7 +103,7 @@ if(isset($_GET['del'])) {
                                 text: 'This menu deleted successfully',
                                 icon: 'success'
                             }).then(() => {
-                                document.location.href = 'manage_coffeBeans.php';
+                                document.location.href = 'manage_coffeeBeans.php';
                             })
                         })
                         .fail(function() {
