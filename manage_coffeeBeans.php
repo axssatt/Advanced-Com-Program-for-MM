@@ -4,7 +4,19 @@
     if($_SESSION['role'] !== "admin") {
         header("location: index.php");
     }
-?>
+
+
+if(isset($_GET['del'])) {
+        $id = $_GET['del'];
+        $deleteQuery = "DELETE FROM goods WHERE goods_id = '$id'";
+        $result = mysqli_query($connect, $deleteQuery);
+
+        if($result) {
+            echo "<script>alert('This menu has been deleted successfully');</script>";
+            header("refresh:1; url=manage_cofeeBeans.php");
+        }
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,8 +54,8 @@
                             ?>
                                 <tr>
                                     <td><?= $menu['name']; ?></td>
-                                    <td><a href="updateMenu.php?id=<?= $menu['coffeeBeans_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
-                                    <td><a href="deleteMenu.php?id=<?= $menu['coffeeBeans_id']; ?>" class="btn btn-danger w-100">Delete</a></td>
+                                    <td><a href="updateMenu.php?id=<?= $menu['goods_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
+                                    <td><a data-id="<?= $menu['goods_id'];?>" href="manage_coffeeBeans.php?del=<?= $menu['goods_id']; ?>" class="btn btn-danger w-100 delete-bttn">Delete</a></td>
                                 </tr>
                             <?php } } ?>
                             <tr>
@@ -59,5 +71,51 @@
         </div>
     </div>
     <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        $('.delete-btn').click(function(e) {
+            var goodsID = $(this).data('id');
+            e.preventDefault();
+            deleteConfirm(goodsID);
+        })
+
+        function deleteConfirm(goodsID) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#47663B",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it",
+                showLoaderOnConfirm: true,
+                preConfirm: function() {
+                    return new Promise(function(resolve) {
+                        $.ajax({
+                            url: 'manage_menu.php',
+                            type: 'GET',
+                            data: 'del=' + goodsID
+                        })
+                        .done(function() {
+                            Swal.fire({
+                                title: 'Success',
+                                text: 'This menu deleted successfully',
+                                icon: 'success'
+                            }).then(() => {
+                                document.location.href = 'manage_coffeBeans.php';
+                            })
+                        })
+                        .fail(function() {
+                            Swal.fire({
+                                title: 'Oops...',
+                                text: 'Something went wrong with ajax',
+                                icon: 'error'
+                            });
+                            window.location.reload();
+                        })
+                    })
+                }
+            })
+        }
+    </script>
 </body>
 </html>

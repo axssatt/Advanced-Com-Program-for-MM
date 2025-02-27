@@ -42,8 +42,8 @@
                             ?>
                                 <tr>
                                     <td><?= $menu['name']; ?></td>
-                                    <td><a href="updateMenu.php?id=<?= $menu['mugs_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
-                                    <td><a href="deleteMenu.php?id=<?= $menu['mugs_id']; ?>" class="btn btn-danger w-100">Delete</a></td>
+                                    <td><a href="updateMenu.php?id=<?= $menu['goods_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
+                                    <td><a href="deleteMenu.php?id=<?= $menu['goods_id']; ?>" class="btn btn-danger w-100">Delete</a></td>
                                 </tr>
                             <?php } } ?>
                             <tr>
