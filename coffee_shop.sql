@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 26, 2025 at 07:55 AM
+-- Host: 127.0.0.1
+-- Generation Time: Feb 27, 2025 at 10:07 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -26,6 +26,29 @@ USE `coffee_shop`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE `cart` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`order_id`, `user_id`, `item_id`, `qty`) VALUES
+(1, 4, 17, 2),
+(4, 4, 18, 5),
+(5, 4, 17, 5);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `goods`
 --
 
@@ -33,7 +56,7 @@ DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
   `goods_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `description` varchar(250) NOT NULL,
+  `description` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `quantity` int(11) NOT NULL,
   `Coffee` varchar(50) NOT NULL,
@@ -45,7 +68,7 @@ CREATE TABLE `goods` (
 --
 
 INSERT INTO `goods` (`goods_id`, `name`, `description`, `price`, `quantity`, `Coffee`, `img`) VALUES
-(16, 'Espresso', 'Concentrated, bold coffee shot brewed under pressure, delivering intense flavor and rich crema—perfect as a base drink. 65', '65.00', 100, 'yes', '3.jpg'),
+(16, 'Espresso', 'Concentrated, bold coffee shot brewed under pressure, delivering intense flavor and rich crema perfect as a base drink.', '65.00', 100, 'yes', '3.jpg'),
 (17, 'Coffee Latte', 'Smooth chilled espresso combined with milk, creating a creamy, refreshing drink ideal for warm days.', '85.00', 100, 'yes', '2.jpg'),
 (18, 'Caramel Macchiato', 'Sweet cold drink layering milk, espresso, and caramel sauce for a delightful blend of flavors and textures.', '85.00', 100, 'yes', '1.jpg'),
 (19, 'Iced Americano', 'Refreshing beverage made from diluted espresso and cold water over ice, offering bold flavor without heaviness.', '85.00', 100, 'yes', '4.jpg'),
@@ -56,29 +79,7 @@ INSERT INTO `goods` (`goods_id`, `name`, `description`, `price`, `quantity`, `Co
 (24, 'Muffin', 'Soft, fluffy muffin available in various flavors, perfect for a quick snack or breakfast alongside your coffee.', '60.00', 100, 'des', '11.jpg'),
 (25, 'Bacon Omelet Puff', 'Savory pastry filled with fluffy eggs and crispy bacon, offering a hearty and satisfying snack option.', '120.00', 100, 'des', '21.jpg'),
 (26, 'Brownie', 'Rich, fudgy brownie with deep chocolate flavor, providing a deliciously sweet indulgence for dessert lovers.', '120.00', 100, 'des', '10.jpg'),
-(27, 'Bagel', 'Freshly baked bagel with a chewy texture, available in various flavors—perfect for breakfast or a quick snack.', '120.00', 100, 'des', '9.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-DROP TABLE IF EXISTS `orders`;
-CREATE TABLE `orders` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL,
-  `qty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `user_id`, `item_id`, `qty`) VALUES
-(1, 4, 17, 2),
-(3, 4, 21, 5);
+(30, 'Black mug', 'everything is black', '450.00', 10, 'mug', '14.jpg');
 
 -- --------------------------------------------------------
 
@@ -105,23 +106,24 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `firstname`, `lastname`,
 (2, 'eliza007', '1234', 'Elizabeth', 'Bennett', 'users'),
 (3, 'jamessy', '1234', 'James', 'Harrison', 'admin'),
 (4, 'charty', '1234', 'Charlotte', 'Graham', 'admin'),
-(5, 'henryeiei', '1234', 'Henry', 'Fletcher', 'users');
+(5, 'henryeiei', '1234', 'Henry', 'Fletcher', 'users'),
+(6, 'natthar', '1234', 'Natthara', 'Wilimphodchaphonkul', 'users');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `goods`
 --
 ALTER TABLE `goods`
   ADD PRIMARY KEY (`goods_id`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `users`
@@ -134,22 +136,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `goods_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `goods_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
