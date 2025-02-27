@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM CoffeeBeans";
+                                $query = "SELECT * FROM goods WHERE Coffee = 'bean'";
                                 $result = mysqli_query($connect, $query);
 
                                 if(mysqli_num_rows($result) >= 1) {
@@ -47,7 +47,7 @@
                                 </tr>
                             <?php } } ?>
                             <tr>
-                                <td colspan="3" align="center"><a href="creatcoffeeBeans.php" class="btn btn-primary w-100">Add Coffee Beans<a></td>
+                                <td colspan="3" align="center"><a href="createCoffeeBeans.php" class="btn btn-primary w-100">Add Coffee Beans<a></td>
                             </tr>
                         </tbody>
                     </table>

@@ -40,7 +40,7 @@
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
                                 <p style="font-size: 25px;"><?= $menu['price']; ?>฿</p>
-                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn" style="background-color: #404040; color: #fff;">Order</a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
                                 <p style="font-size: 25px;"><?= $menu['price']; ?>฿</p>
-                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn" style="background-color: #404040; color: #fff;">Order</a>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                 <h4 class="card-title"><?= $menu['name']; ?></h4>
                                 <p style="font-size: 12px;"><?= $menu['description']; ?></p>
                                 <p style="font-size: 25px;"><?= $menu['price']; ?>฿</p>
-                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn-primary">Order</a>
+                                <a href="orderMenuCoffee.php?id=<?= $menu['goods_id']; ?>" class="btn btn" style="background-color: #404040; color: #fff;">Order</a>
                             </div>
                         </div>
                     </div>

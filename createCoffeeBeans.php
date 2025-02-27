@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Mug</title>
+    <title>Add Coffee Bean</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,12 +24,12 @@
             </div>
             <div class="col-12 col-md-10 col-lg-8">
                 <div class="row text-center my-2">
-                    <p class="fs-4">Add Mug</p>
+                    <p class="fs-4">Add Coffee Bean</p>
                 </div>
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <form action="php/addMug.php" method="post" enctype="multipart/form-data">
+                            <form action="php/addCoffeeBean.php" method="post" enctype="multipart/form-data">
                                 <div class="my-2">
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" name="name" id="name" class="form-control" required>

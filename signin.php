@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <?php include_once "footer.php"; ?>
 </body>
 </html>

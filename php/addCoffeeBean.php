@@ -26,7 +26,7 @@
             $price = $_POST['price'];
             $quantity = $_POST['quantity'];
 
-            $query = "INSERT INTO goods (`name`, `description`, price, quantity, Coffee, img) VALUES ('$name', '$description', '$price', '$quantity', 'mug', '".$fileName."')";
+            $query = "INSERT INTO goods (`name`, `description`, price, quantity, Coffee, img) VALUES ('$name', '$description', '$price', '$quantity', 'bean', '".$fileName."')";
             $result = mysqli_query($connect, $query);
 
             if($result){
@@ -35,7 +35,7 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Successfully',
-                                text: 'Add mug successfully',
+                                text: 'Add coffee bean successfully',
                                 customClass: {
                                     title: 'swal-custom-font',
                                     popup: 'swal-custom-font',
@@ -43,7 +43,7 @@
                                 }
                             }).then((result) => {
                                 if(result.isConfirmed) {
-                                    window.location.href = '../manage_mug.php';
+                                    window.location.href = '../manage_coffeeBeans.php';
                                 }
                             });
                         });
@@ -54,7 +54,7 @@
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
-                                text: 'Can't add this mug, please try agian',
+                                text: 'Can't add this coffee bean, please try agian',
                                 customClass: {
                                     title: 'swal-custom-font',
                                     popup: 'swal-custom-font',
@@ -62,7 +62,7 @@
                                 }
                             }).then((result) => {
                                 if(result.isConfirmed) {
-                                    window.location.href = '../createMug.php';
+                                    window.location.href = '../createCoffeeBeans.php';
                                 }
                             });
                         });

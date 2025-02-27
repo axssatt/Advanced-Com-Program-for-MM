@@ -47,7 +47,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM goods";
+                                $query = "SELECT * FROM goods WHERE Coffee IN ('yes', 'no', 'des')";
                                 $result = mysqli_query($connect, $query);
 
                                 if(mysqli_num_rows($result) >= 1) {
