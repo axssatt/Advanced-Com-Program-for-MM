@@ -1,3 +1,15 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .swal-custom-font {
+            font-family: 'Poppins', serif !important;
+        }
+    </style>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php
     require_once "config.php";
 
@@ -19,9 +31,43 @@
             $result = mysqli_query($connect, $query);
 
             if($result){
-                echo "<script>alert('add menu successfully!'); window.location = '../manage_menu.php';</script>";
+                echo "<script>
+                        $(document).ready(function() {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Successfully',
+                                text: 'Add this menu successfully',
+                                customClass: {
+                                    title: 'swal-custom-font',
+                                    popup: 'swal-custom-font',
+                                    confirmButton: 'swal-custom-font'
+                                }
+                            }).then((result) => {
+                                if(result.isConfirmed) {
+                                    window.location.href = '../manage_menu.php';
+                                }
+                            });
+                        });
+                    </script>";
             } else {
-                echo "<script>alert(can not add menu into database, please try agian'); window.location = '../createMenu.php';</script>";
+                echo "<script>
+                        $(document).ready(function() {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Can't add this menu, please try agian',
+                                customClass: {
+                                    title: 'swal-custom-font',
+                                    popup: 'swal-custom-font',
+                                    confirmButton: 'swal-custom-font'
+                                }
+                            }).then((result) => {
+                                if(result.isConfirmed) {
+                                    window.location.href = '../createMenu.php';
+                                }
+                            });
+                        });
+                    </script>";
             }
         }
     }

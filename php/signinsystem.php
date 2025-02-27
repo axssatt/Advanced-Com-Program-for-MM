@@ -1,3 +1,12 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .swal-custom-font {
+            font-family: 'Poppins', serif !important;
+        }
+    </style>
+</head>
+
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -17,7 +26,12 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'Sorry',
-                    text: 'username or password is incorrect, please try agian'
+                    text: 'username or password is incorrect, please try agian',
+                    customClass: {
+                        title: 'swal-custom-font',
+                        popup: 'swal-custom-font',
+                        confirmButton: 'swal-custom-font'
+                    }
                 }).then((result) => {
                     if(result.isConfirmed) {
                         window.location.href = '../signin.php';
