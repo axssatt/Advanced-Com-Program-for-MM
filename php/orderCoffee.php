@@ -6,7 +6,7 @@
     $qty = $_POST['qty'];
 
     if(isset($_POST['cart'])) {
-        $query = "INSERT INTO orders (user_id, item_id, qty) VALUES ('$userID', '$itemID', '$qty')";
+        $query = "INSERT INTO cart (user_id, item_id, qty) VALUES ('$userID', '$itemID', '$qty')";
         $result = mysqli_query($connect, $query);
 
         if($result) {

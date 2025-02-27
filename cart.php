@@ -6,6 +6,8 @@
     $queryCount = "SELECT * FROM cart LEFT JOIN goods ON item_id = goods_id WHERE user_id = '$userID'";
     $result = mysqli_query($connect, $queryCount);
 
+    $final_price = 0; // Initialize final price
+
     if(isset($_GET['del'])) {
         $id = $_GET['del'];
         $deleteQuery = "DELETE FROM cart WHERE order_id = '$id'";
@@ -57,6 +59,7 @@
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
                                     <td><?php echo number_format($itemPrice = $allMenu['qty'] * $allMenu['price'], 2); ?></td>
+                                    <?php $final_price += $itemPrice; // Accumulate item prices ?>
                                     <td><a href="cart.php?del=<?= $allMenu['order_id']; ?>" class="btn btn-danger w-100">Delete</a></td>
                                 </tr>
                                 <?php } if(mysqli_num_rows($result) == 0) { ?>
@@ -64,7 +67,7 @@
                                 <?php } else {   ?>
                                 <tr>
                                     <td colspan="3" align="center">Total : </td>
-                                    <td colspan="1"><?php $final_price = 0; $final_price += $itemPrice; echo number_format($final_price, 2); ?></td>
+                                    <td colspan="1"><?php echo number_format($final_price, 2); ?></td> <!-- Display final price -->
                                     <td colspan="1"><a href="confirmOrder.php" class="btn btn-success w-100">Confirm</a></td>
                                 </tr>
                                 <?php } ?>
