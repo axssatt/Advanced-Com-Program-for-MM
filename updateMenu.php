@@ -22,8 +22,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include_once "navbar.php"; ?>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-5 mt-3">
             <div class="col col-md-1 col-lg-2">
                 <!-- ห้ามเขียนโค้ดตรงนี้ -->
             </div>
@@ -68,8 +69,12 @@
                                                     echo "Coffee";
                                                 } else if($menu['Coffee'] == "no") {
                                                     echo "Non-Coffee";
-                                                } else {
+                                                } else if($menu['Coffee'] == "des"){
                                                     echo "Dessert";
+                                                } else if ($menu['Coffee'] == "mug") {
+                                                    echo "Mug";
+                                                } else {
+                                                    echo "Coffee Bean";
                                                 }
                                             ?>
                                         </option>
@@ -96,6 +101,7 @@
             </div>
         </div>
     </div>
+    <?php include_once "footer.php" ?>
     <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
