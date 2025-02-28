@@ -4,23 +4,24 @@
     if($_SESSION['role'] !== "admin") {
         header("location: index.php");
     }
+
     if(isset($_GET['del'])) {
         $id = $_GET['del'];
-        $deleteQuery = "DELETE FROM goods WHERE goods_id = '$id'";
+        $deleteQuery = "DELETE FROM users WHERE user_id = '$id'";
         $result = mysqli_query($connect, $deleteQuery);
 
         if($result) {
-            echo "<script>alert('This menu has been deleted successfully');</script>";
-            header("refresh:1; url=manage_cofeeBeans.php");
+            echo "<script>alert('This user has been deleted successfully');</script>";
+            header("refresh:1; url=manage_users.php");
         }
     }
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Mugs</title>
+    <title>Manage users</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -34,31 +35,36 @@
             
             </div>
             <div class="col-12 col-md-10 col-lg-8">
-                <p class="fs-5 text-center">Manage Mugs</p>
-                <div class="table-reponsive">
+                <p class="fs-5 text-center">Manage Users</p>
+                <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Role</th>
                                 <th style="width: 100px;">Edit</th>
                                 <th style="width: 100px;">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $query = "SELECT * FROM goods WHERE Coffee = 'mug'";
+                                $query = "SELECT * FROM users";
                                 $result = mysqli_query($connect, $query);
 
                                 if(mysqli_num_rows($result) >= 1) {
-                                    while ($menu = mysqli_fetch_assoc($result)) {
+                                    while ($user = mysqli_fetch_assoc($result)) {
                             ?>
                                 <tr>
-                                    <td><?= $menu['name']; ?></td>
-                                    <td><a href="updateMenu.php?id=<?= $menu['goods_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
-                                    <td><a data-id="<?= $menu['goods_id'];?>" href="manage_mug.php?del=<?= $menu['goods_id']; ?>" class="btn btn-danger w-100 delete-btn">Delete</a></td>
+                                    <td><?= $user['firstname']; ?></td>
+                                    <td><?= $user['lastname']; ?></td>
+                                    <td><?= $user['role']; ?></td>
+                                    <td><a href="updateMenu.php?id=<?= $user['user_id']; ?>" class="btn btn-warning w-100">Edit</a></td>
+                                    <td><a href="manage_users.php?del=<?= $user['user_id']; ?>" data-id="<?= $user['user_id']; ?>" class="btn btn-danger w-100 delete-btn">Delete</a></td>
+                                </tr>
                             <?php } } ?>
                             <tr>
-                                <td colspan="3" align="center"><a href="createMug.php" class="btn btn-primary w-100">Add mugs</a></td>
+                                <td colspan="5" align="center"><a href="createMenu.php" class="btn btn-primary w-100">Add menu</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -90,17 +96,17 @@
                 preConfirm: function() {
                     return new Promise(function(resolve) {
                         $.ajax({
-                            url: 'manage_mug.php',
+                            url: 'manage_users.php',
                             type: 'GET',
                             data: 'del=' + goodsID
                         })
                         .done(function() {
                             Swal.fire({
                                 title: 'Success',
-                                text: 'This menu deleted successfully',
+                                text: 'This user deleted successfully',
                                 icon: 'success'
                             }).then(() => {
-                                document.location.href = 'manage_mug.php';
+                                document.location.href = 'manage_users.php';
                             })
                         })
                         .fail(function() {

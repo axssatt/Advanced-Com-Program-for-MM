@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'php/config.php';
-    $userQuery1 = "SELECT * FROM goods WHERE goods_id = '3' " ;
-    $userQuery2 = "SELECT * FROM goods WHERE goods_id = '4' " ;
-    $userQuery3 = "SELECT * FROM goods WHERE goods_id = '11' " ;
+    $userQuery1 = "SELECT * FROM goods WHERE goods_id = '17' " ;
+    $userQuery2 = "SELECT * FROM goods WHERE goods_id = '23' " ;
+    $userQuery3 = "SELECT * FROM goods WHERE goods_id = '24' " ;
     $result1 = mysqli_query($connect,$userQuery1);
     $result2 = mysqli_query($connect,$userQuery2);
     $result3 = mysqli_query($connect,$userQuery3);
@@ -78,27 +78,27 @@ include 'php/config.php';
                                     <p class="card-text">
                                         <?php echo $row1['description']?>
                                     </p>
-                                    <a href="orderMenu.php?id<?= $row1['menu_id']; ?>" class="btn" style="background-color: #404040; color: #fff;">Order</a>
+                                    <a href="orderMenuCoffee.php?id=<?= $row1['goods_id']; ?>" class="btn" style="background-color: #404040; color: #fff;">Order</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
                         <div class="card">
-                            <img src="#">
+                            <img src="img-upload/<?= $row2['img']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row2['name']?></h5>
-                                <p class="card-text"><?php echo $row2['name']?></p>
-                                <a class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
+                                <p class="card-text"><?php echo $row2['description']?></p>
+                                <a class="btn" style="background-color: #404040; color: #fff;" href="orderMenuCoffee.php?id=<?= $row2['goods_id']; ?>">Order</a>
                             </div>
                         </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
                         <div class="card">
-                            <img src="#">
+                            <img src="img-upload/<?= $row3['img']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row3['name']?></h5>
                                 <p class="card-text"><?php echo $row3['description']?></p>
-                                <a href="หน้าในใส่เอง" class="btn" style="background-color: #404040; color: #fff;">ใส่เองคิดเอง</a>
+                                <a href="orderMenuCoffee.php?id=<?= $row3['goods_id']; ?>" class="btn" style="background-color: #404040; color: #fff;">Order</a>
                             </div>
                         </div>
                         </div>
