@@ -7,18 +7,8 @@
     $result = mysqli_query($connect, $queryCount);
 
     $final_price = 0; // Initialize final price
-
-    if(isset($_GET['del'])) {
-        $id = $_GET['del'];
-        $deleteQuery = "DELETE FROM cart WHERE order_id = '$id'";
-        $deleteResult = mysqli_query($connect, $deleteQuery);
-
-        if($deleteResult){
-            echo "<script>alert('Deleted this order successfully'); window.location = 'cart.php'</script>";
-        } else {
-            echo "<script>alert('Can't delete this order, please try agian'); window.location = 'cart.php'</script>";
-        }
-    }
+    $hasDessert = false;
+    $hasDrink = false;
 
 ?>
 
@@ -36,10 +26,10 @@
 <?php include_once "navbar.php"; ?>
     <div class="container-fluid">
         <div class="row">
-            <div class="col col-md-1 col-lg-2">
+            <div class="col col-md-1 col-lg-1">
                 <!-- ห้ามเขียนโค้ดตรงนี้ -->
             </div>
-            <div class="col-12 col-md-10 col-lg-8">
+            <div class="col-12 col-md-10 col-lg-10">
             <div class="row">
                     <p class="text-center fs-1">Order Summary</p>
             </div>               
@@ -53,9 +43,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php while($allMenu = mysqli_fetch_assoc($result)) { ?>
+                                <form action="php/orderItem.php" method="post">
+                                <?php while($allMenu = mysqli_fetch_assoc($result)) { 
+                                    if($allMenu['Coffee'] == 'des') {
+                                        $hasDessert = true;
+                                    }
+                                    if($allMenu['Coffee'] == 'yes' || $allMenu['Coffee'] == 'no') {
+                                        $hasDrink = true;
+                                    }
+                                ?>
+                                <input type="hidden" name="order[<?= id ?>]" value="">
                                 <tr>
-                                    <td><?= $allMenu['name']; ?></td>
+                                    <td><?= $allMenu['name']; ?>></td>
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
                                     <td><?php echo number_format($itemPrice = $allMenu['qty'] * $allMenu['price'], 2); ?></td>
@@ -67,58 +66,32 @@
                                 <tr>
                                     <td colspan="1">Discount :</td>
                                     <td colspan="3">
-                                        <?php 
-                                        function calculateDiscount($items) {
-                                            $discount = 0;
-                                        
-                                            // Check if items contain coffee or non-coffee with dessert
-                                            $containsCoffee = false;
-                                            $containsDessert = false;
-                                        
-                                            foreach ($items as $item) {
-                                                if (stripos($item, 'yes') !== false) {
-                                                    $containsCoffee = true;
-                                                } elseif (stripos($item, 'des') !== false) {
-                                                    $containsDessert = true;
-                                                }
-                                            }
-                                        
-                                            // If coffee or non-coffee with dessert is found, apply discount
-                                            if ($containsCoffee && $containsDessert) {
-                                                $discount = 0.10; // 10% discount
-                                            }
-                                        
-                                            return $discount;
-                                        }
-                                        
-                                        // Example usage
-                                        $items = ['yes', 'des'];
-                                        $discountRate = calculateDiscount($items);
-                                        
-                                        if ($discountRate > 0) {
-                                            echo "You have a discount of " . ($discountRate * 100) . "%.";
+                                        <?php if($hasDessert && $hasDrink) {
+                                            echo "You have a discount of 10%.";
                                         } else {
                                             echo "No discount available.";
-                                        }
-                                        ?></td>
+                                        } ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="center">Total : </td>
                                     <td colspan="1">
-                                        <?php 
-                                            function caltotal($final_price, $discountRate) {
-                                                $total = $final_price - ($final_price * $discountRate);
-                                                return $total;
-                                            }
-                                        ?>
+                                        <?php if($hasDessert && $hasDrink) {
+                                            $totalPrice = $final_price - ($final_price * 0.1);
+                                            echo number_format($totalPrice, 2);
+                                        } else {
+                                            echo number_format($final_price, 2);
+                                        }?>
                                     </td> <!-- Display final price -->
+                                    <!-- form to send data to database -->
                                     <td colspan="1"><a href="orderSum.php" class="btn btn-success w-100">Order Now</a></td>
                                 </tr>
                                 <?php } ?>
+                                </form>
                             </tbody>
                         </table>
             </div>
-            <div class="col col-md-1 col-lg-2">
+            <div class="col col-md-1 col-lg-1">
                 <!-- ห้ามเขียนโค้ดตรงนี้ -->
             </div>
         </div>

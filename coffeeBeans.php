@@ -28,7 +28,7 @@
                 </div>
                 <div class="row my-2">
                     <!-- ไปทำต่อเองเริ่มให้แล้ว -->
-                <?php $queryMenuCoffee = "SELECT * FROM goods WHERE Coffee= 'bean'"; 
+                <?php $queryMenuCoffee = "SELECT * FROM goods WHERE Coffee = 'bean'"; 
                     $result = mysqli_query($connect, $queryMenuCoffee);
 
                     while ($menu = mysqli_fetch_assoc($result)) {
