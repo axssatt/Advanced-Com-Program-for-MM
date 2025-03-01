@@ -99,6 +99,7 @@ include 'php/config.php';
                                 <h5 class="card-title"><?php echo $row3['name']?></h5>
                                 <p class="card-text"><?php echo $row3['description']?></p>
                                 <a href="orderMenuCoffee.php?id=<?= $row3['goods_id']; ?>" class="btn" style="background-color: #404040; color: #fff;">Order</a>
+                                <a href="orderCon.php?id=<?= $row3['goods_id']; ?>" class="btn" style="background-color: #404040; color: #fff;">test</a>
                             </div>
                         </div>
                         </div>

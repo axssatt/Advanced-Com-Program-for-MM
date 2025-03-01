@@ -54,7 +54,7 @@
                                 ?>
                                 <input type="hidden" name="order[<?= id ?>]" value="">
                                 <tr>
-                                    <td><?= $allMenu['name']; ?>></td>
+                                    <td><?= $allMenu['name']; ?></td>
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
                                     <td><?php echo number_format($itemPrice = $allMenu['qty'] * $allMenu['price'], 2); ?></td>
