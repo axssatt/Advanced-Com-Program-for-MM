@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-12 col-md-10 col-lg-8">
                     <div class="row">
-                        <h2 class="text-center mb-3">Abous Us</h2>
+                        <h2 class="text-center mb-3">About Us</h2>
                     </div>
                     <div class="row">
                         <div class="card">
@@ -28,7 +28,7 @@
                                 <div class="card-text">
                                     <p class="fs-6">672115054 Nattharawipa Wilimphodchaphornkul</p>
                                     <p class="fs-6">672115056 Punmanus Atama</p>
-                                    <p class="fs-6">672115058 Saruta Kaoian</p>
+                                    <p class="fs-6">672115058 Saruta Kao-ian</p>
                                 </div>
                             </div>
                         </div>
