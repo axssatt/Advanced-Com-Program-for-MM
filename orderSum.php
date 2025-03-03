@@ -57,6 +57,7 @@
                                 ?>
                                 <tr>
                                     <input type="hidden" name="items[<?php echo $index; ?>][goods_id]" value="<?php echo $allMenu['goods_id']; ?>">
+                                    <input type="hidden" name="items[<?php echo $index; ?>][qty]" value="<?php echo $allMenu['qty']; ?>">
                                     <td><?= $allMenu['name']; ?></td>
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
