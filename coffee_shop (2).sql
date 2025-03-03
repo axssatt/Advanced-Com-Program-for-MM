@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2025 at 09:43 AM
+-- Generation Time: Mar 03, 2025 at 09:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -93,7 +93,8 @@ INSERT INTO `goods` (`goods_id`, `name`, `description`, `price`, `quantity`, `Co
 (38, 'Classic Black & White Mug ', 'Timeless design with a sleek black exterior and white interior, perfect for coffee or tea lovers.', 190.00, 100, 'mug', '12.jpg'),
 (39, 'Tumbler Small Mug', 'Compact and stylish, this small tumbler keeps drinks hot or cold, ideal for on-the-go sipping.', 350.00, 100, 'mug', '13.jpg'),
 (40, 'Black Tumbler', 'Elegant black tumbler with double-wall insulation, perfect for maintaining temperature, suitable for home or travel.', 650.00, 100, 'mug', '14.jpg'),
-(41, 'Sakura Chan Tumbler', 'Charming tumbler featuring delicate cherry blossoms, perfect for enjoying beverages while adding a whimsical touch to your day.', 750.00, 100, 'mug', '15.jpg');
+(41, 'Sakura Chan Tumbler', 'Charming tumbler featuring delicate cherry blossoms, perfect for enjoying beverages while adding a whimsical touch to your day.', 750.00, 100, 'mug', '15.jpg'),
+(42, 'Bagel', 'Freshly baked bagel with a chewy texture, available in various flavors—perfect for breakfast or a quick snack.', 120.00, 100, 'des', '9.jpg');
 
 -- --------------------------------------------------------
 
@@ -144,6 +145,34 @@ CREATE TABLE `mugs` (
   `price` decimal(10,2) NOT NULL,
   `quantity` int(11) NOT NULL,
   `img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ordernow`
+--
+
+DROP TABLE IF EXISTS `ordernow`;
+CREATE TABLE `ordernow` (
+  `orer_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `orderID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `itemID` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -209,6 +238,18 @@ ALTER TABLE `mugs`
   ADD PRIMARY KEY (`mugs_id`);
 
 --
+-- Indexes for table `ordernow`
+--
+ALTER TABLE `ordernow`
+  ADD PRIMARY KEY (`orer_id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -222,7 +263,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `coffeebeans`
@@ -234,7 +275,7 @@ ALTER TABLE `coffeebeans`
 -- AUTO_INCREMENT for table `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `goods_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `goods_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -247,6 +288,18 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `mugs`
   MODIFY `mugs_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ordernow`
+--
+ALTER TABLE `ordernow`
+  MODIFY `orer_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
