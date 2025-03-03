@@ -44,6 +44,7 @@
                             </thead>
                             <tbody>
                                 <form action="php/orderItem.php" method="post">
+                                <input type="hidden" name="userID" value="<?php echo $userID; ?>">
                                 <?php while($allMenu = mysqli_fetch_assoc($result)) { 
                                     if($allMenu['Coffee'] == 'des') {
                                         $hasDessert = true;
@@ -52,8 +53,8 @@
                                         $hasDrink = true;
                                     }
                                 ?>
-                                <input type="hidden" name="order[<?= id ?>]" value="">
                                 <tr>
+                            
                                     <td><?= $allMenu['name']; ?></td>
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
@@ -100,3 +101,5 @@
     <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
+
+<input type="hidden" name="items[<?php echo $index; ?>][product_id]" value="<?php echo $row['id']; ?>">

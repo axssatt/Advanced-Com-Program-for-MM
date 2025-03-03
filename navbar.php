@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #6F8C51;">
   <div class="container-fluid">
+    <img src="material/img/logo-removebg-preview.png" width="45px" height="45px">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,6 +17,7 @@
             <li><a class="dropdown-item" href="menu.php">Menu</a></li>
             <li><a class="dropdown-item" href="coffeeBeans.php">Coffee Beans</a></li>
             <li><a class="dropdown-item" href="mugs.php">Mugs</a></li>
+            <li><a class="dropdown-item" href="orders.php">Orders</a></li>
           </ul>
         </li>
         <li class="nav-item">

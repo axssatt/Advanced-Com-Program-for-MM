@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +39,18 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="text" name="password" id="password" class="form-control" required>
                             </div>
+                        <?php if(isset($_SESSION['role'])) {
+                            if($_SESSION['role'] == "admin") { ?>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role of user</label>
+                            <select name="role" id="role" required class="form-select">
+                                <option value="users" selected>User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <?php } else {  ?>
+
+                        <?php } } ?>
                             <div class="row">
                                 <div class="col-12 col-md-6 col-lg-6 mb-2"><input type="submit" value="Register" class="btn btn-success w-100"></div>
                                 <div class="col-12 col-md-6 col-lg-6 mb-2"><input type="reset" value="Cancel" class="btn btn-danger w-100"></div>
