@@ -1,3 +1,15 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .swal-custom-font {
+            font-family: 'Poppins', serif !important;
+        }
+    </style>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php
     session_start();
     require_once "config.php";
@@ -10,9 +22,43 @@
         $result = mysqli_query($connect, $query);
 
         if($result) {
-            echo "<script>alert('Add order to cart already'); window.location = '../cart.php'</script>";
+            echo "<script>
+                            $(document).ready(function() {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: 'Add order to cart successfully',
+                                    customClass: {
+                                        title: 'swal-custom-font',
+                                        popup: 'swal-custom-font',
+                                        confirmButton: 'swal-custom-font'
+                                    }
+                                }).then((result) => {
+                                    if(result.isConfirmed) {
+                                        window.location.href = '../cart.php';
+                                    }
+                                });
+                            });
+                    </script>";
         } else {
-            echo "<script>alert('Can't add order to cart, please try agian'); window.location = '../menu.php'</script>";
+            echo "<script>
+                            $(document).ready(function() {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oop...',
+                                    text: 'Can not add the order to cart, please try agian',
+                                    customClass: {
+                                        title: 'swal-custom-font',
+                                        popup: 'swal-custom-font',
+                                        confirmButton: 'swal-custom-font'
+                                    }
+                                }).then((result) => {
+                                    if(result.isConfirmed) {
+                                        window.location.href = '../menu.php';
+                                    }
+                                });
+                            });
+                    </script>";
         }
     } else {
 

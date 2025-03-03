@@ -45,7 +45,9 @@
                             <tbody>
                                 <form action="php/orderItem.php" method="post">
                                 <input type="hidden" name="userID" value="<?php echo $userID; ?>">
-                                <?php while($allMenu = mysqli_fetch_assoc($result)) { 
+                                <?php 
+                                    $index = 0;
+                                    while($allMenu = mysqli_fetch_assoc($result)) { 
                                     if($allMenu['Coffee'] == 'des') {
                                         $hasDessert = true;
                                     }
@@ -54,14 +56,14 @@
                                     }
                                 ?>
                                 <tr>
-                            
+                                    <input type="hidden" name="items[<?php echo $index; ?>][goods_id]" value="<?php echo $allMenu['goods_id']; ?>">
                                     <td><?= $allMenu['name']; ?></td>
                                     <td><?= $allMenu['qty']; ?></td>
                                     <td><?= $allMenu['price']; ?></td>
                                     <td><?php echo number_format($itemPrice = $allMenu['qty'] * $allMenu['price'], 2); ?></td>
                                     <?php $final_price += $itemPrice; // Accumulate item prices ?>
                                 </tr>
-                                <?php } if(mysqli_num_rows($result) == 0) { ?>
+                                <?php $index++; } if(mysqli_num_rows($result) == 0) { ?>
                                     
                                 <?php } else {   ?>
                                 <tr>
