@@ -60,7 +60,18 @@
                             });
                     </script>";
         }
-    } else {
+    } 
+    
+    else {
+        $userID = $_SESSION['id'];
+        $itemID = $_POST['itemID'];
+        $qty = $_POST['qty'];
 
+        $query = "INSERT INTO cart(user_id, item_id, qty) VALUES ('$userID', '$itemID', '$qty')";
+        $result = mysqli_query($connect, $query);
+
+        if($result) {
+            header("location: ../orderSum.php");
+        }
     }
 ?>
