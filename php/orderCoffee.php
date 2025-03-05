@@ -68,8 +68,11 @@
 
         if($result) {
             $notiMessage = "You have a new order! $menuName is now ready to be prepared";
-            $addNotiMessage = "INSERT INTO ()"
-            echo "<script>
+            $addNotiMessage = "INSERT INTO notificationAdmin (`text`, userID, `status`) VALUES ('$notiMessage', '$userID', 'Unread')";
+            $resultAddNoti = mysqli_query($connect, $addNotiMessage);
+
+            if($resultAddNoti) {
+                echo "<script>
                             $(document).ready(function() {
                                 Swal.fire({
                                     icon: 'success',
@@ -87,6 +90,26 @@
                                 });
                             });
                     </script>";
+            } else {
+                echo "<script>
+                            $(document).ready(function() {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oop...',
+                                    text: 'Can not add the order, please try agian',
+                                    customClass: {
+                                        title: 'swal-custom-font',
+                                        popup: 'swal-custom-font',
+                                        confirmButton: 'swal-custom-font'
+                                    }
+                                }).then((result) => {
+                                    if(result.isConfirmed) {
+                                        window.location.href = '../menu.php';
+                                    }
+                                });
+                            });
+                    </script>";
+            }
         } else {
             echo "<script>
                             $(document).ready(function() {

@@ -34,11 +34,11 @@
                     if(mysqli_num_rows($result) == 0) {
                 ?>
                 <div class="text-center">
-                    <img src="material/bell.png" width="100px" height="100px" class="mb-2">
+                    <img src="material/non-notification.png" width="100px" height="100px" class="mb-2">
                     <p class="fs-5">You don’t have any new notifications.</p>
                 </div>
                 <?php } else { ?>
-                    <table class="table">
+                    <table class="table mt-5">
                         <thead>
                             <tr>
                                 <td>Message</td>
