@@ -30,12 +30,12 @@ include 'php/config.php';
     <?php include_once "navbar.php"; ?>
     <div class="container-fluid my-2 wrapper">
         <div class="row content">
-            <div class="col col-md-1 col-lg-2">
+            <div class="col col-md-1 col-lg-1">
                 <!-- ห้าม!เขียนโค้ดตรงนี้ สาป -->
             </div>
-            <div class="col-12 col-md-10 col-lg-8">
+            <div class="col-12 col-md-10 col-lg-10">
                 <!-- เริ่มเขียนโค้ดตรงนี้ -->
-                 <div class="my-4">
+                 <div class="mt-4 mb-4">
                     <p class="fs-4 text-center">Brewed with Love, Deliver to You</p>
                     <p class="fs-6 text-center">Explore our fresh coffee, premium bean, and stylish mugs</p>
                  </div>
@@ -62,12 +62,11 @@ include 'php/config.php';
                         </button>
                     </div>
                 </div>
-                <div class="row my-5">
+                <div class="row my-5 ps-2">
                     <div class="row">
                         <h4>Featured products</h4>
                     </div>
-                    <div class="row mt-3">
-
+                    <div class="row mt-3 pe-0">
                         <div class="col-12 col-md-4 col-lg-4"> <!-- มีการแบ่ง layout ให้แล้วลองดูว่าควรเขียนตรงไหน --> 
                         <div class="card">
                                 <img src="img-upload/<?= $row1['img']; ?>">
@@ -104,7 +103,7 @@ include 'php/config.php';
                     </div>
                 </div>
             </div>
-            <div class="col col-md-1 col-lg-2">
+            <div class="col col-md-1 col-lg-1">
                 <!-- ห้าม!เขียนโค้ดตรงนี้ สาป -->
             </div>
         </div>

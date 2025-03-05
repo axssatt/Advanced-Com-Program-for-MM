@@ -70,7 +70,7 @@
             
             </div>
             <div class="col-12 col-md-10 col-lg-10">
-                <p class="fs-5 text-center">Manage Users</p>
+                <h2 class="text-center mb-3">Manage Users</h2>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>

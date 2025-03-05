@@ -35,7 +35,7 @@
             
             </div>
             <div class="col-12 col-md-10 col-lg-8">
-                <p class="fs-5 text-center">Manage Menu</p>
+                <h2 class="text-center mb-3">Manage Menu</h2>
                 <div class="table-reponsive">
                     <table class="table table-hover">
                         <thead>

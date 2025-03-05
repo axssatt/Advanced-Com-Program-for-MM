@@ -61,17 +61,51 @@
                     </script>";
         }
     } 
-    
-    else {
-        $userID = $_SESSION['id'];
-        $itemID = $_POST['itemID'];
-        $qty = $_POST['qty'];
-
-        $query = "INSERT INTO cart(user_id, item_id, qty) VALUES ('$userID', '$itemID', '$qty')";
+    if(isset($_POST['order'])){
+        $menuName = $_POST['menuName'];
+        $query = "INSERT INTO orders (userID, itemID, qty, `status`) VALUES ('$userID', '$itemID', '$qty', 'processing')";
         $result = mysqli_query($connect, $query);
 
         if($result) {
-            header("location: ../orderSum.php");
+            $notiMessage = "You have a new order! $menuName is now ready to be prepared";
+            $addNotiMessage = "INSERT INTO ()"
+            echo "<script>
+                            $(document).ready(function() {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: 'something ka?',
+                                    customClass: {
+                                        title: 'swal-custom-font',
+                                        popup: 'swal-custom-font',
+                                        confirmButton: 'swal-custom-font'
+                                    }
+                                }).then((result) => {
+                                    if(result.isConfirmed) {
+                                        window.location.href = '../orderCon.php';
+                                    }
+                                });
+                            });
+                    </script>";
+        } else {
+            echo "<script>
+                            $(document).ready(function() {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oop...',
+                                    text: 'Can not add the order, please try agian',
+                                    customClass: {
+                                        title: 'swal-custom-font',
+                                        popup: 'swal-custom-font',
+                                        confirmButton: 'swal-custom-font'
+                                    }
+                                }).then((result) => {
+                                    if(result.isConfirmed) {
+                                        window.location.href = '../menu.php';
+                                    }
+                                });
+                            });
+                    </script>";
         }
     }
 ?>

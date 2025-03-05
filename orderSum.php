@@ -10,6 +10,11 @@
     $hasDessert = false;
     $hasDrink = false;
 
+    if(isset($_GET['status']) == "orderNow") {
+        $queryCount = "SELECT * FROM ordernow LEFT JOIN goods ON item_id = good_id WHERE user_id = '$userID'";
+        $result = mysqli_query($connect, $queryCount);
+    }
+
 ?>
 
 
@@ -88,7 +93,7 @@
                                         }?>
                                     </td> <!-- Display final price -->
                                     <!-- form to send data to database -->
-                                    <td colspan="1"><a href="orderSum.php" class="btn btn-success w-100">Order Now</a></td>
+                                    <td colspan="1"><input type="submit" value="Order now" class="btn btn-success w-100"></td>
                                 </tr>
                                 <?php } ?>
                                 </form>

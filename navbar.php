@@ -23,9 +23,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="aboutus.php" style="color: #FFF4F4;">About Us</a>
         </li>
-          <?php if (isset($_SESSION['role'])) { ?>
-            <?php if($_SESSION['role'] == "admin") { ?>
-              <li class="nav-item dropdown">
+        <?php if (isset($_SESSION['role'])) { ?>
+          <?php if($_SESSION['role'] == "admin") { ?>
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFF4F4;">
                 Admin Menu
               </a>
@@ -37,16 +37,24 @@
                 <li><a class="dropdown-item" href="manage_users.php">Users</a></li>
               </ul>
             </li>
-            <?php } }?>
+          <?php } ?>
+        <?php } ?>
       </ul>
       <form class="d-flex" role="search">
         <?php if(isset($_SESSION['firstname'])) { ?>
-            <span class="navbar-text me-4" style="color: #FFF4F4;">
-                Welcome, <?php echo $_SESSION['firstname']; ?>
-            </span>
-            <a href="cart.php?id=<?= $_SESSION['id']; ?>"><img src="material/shopping-cart.png" width="30px" height="30px" class="me-3 mt-1"></a>
+          <span class="navbar-text me-3" style="color: #FFF4F4;">
+            Welcome, <?php echo $_SESSION['firstname']; ?>
+          </span>
+            <?php if(isset($_SESSION['role'])) { 
+              if($_SESSION['role'] == 'users') {
+            ?>
+              <a href="notiUser.php?id=<?= $_SESSION['id'] ?>"><img src="material/notifications.png" width="30px" height="30px" class="me-3 mt-1"></a>
+            <?php } else { ?>
+              <a href="notiAdmin.php"><img src="material/notifications.png" width="30px" height="30px" class="me-3 mt-1"></a>
+            <?php } ?>
+            <a href="cart.php"><img src="material/shopping-cart.png" width="30px" height="30px" class="me-3 mt-1"></a>
             <a href="index.php?logout='0'" class="btn btn-danger">Sign Out</a>
-        <?php } else { ?>
+        <?php } } else { ?>
             <a href="register.php" class="btn me-3" style="background-color: #404040; color: #fff4f4;">Register</a>
             <a href="signin.php" class="btn" style="background-color: #d9c3a9;">Sign In</a>
         <?php } ?>

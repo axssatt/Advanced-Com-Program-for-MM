@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +21,10 @@
             <div class="col-12 col-md-10 col-lg-8">
                 <!-- เริ่มเขียนโค้ดตรงนี้เลยยย -->
                  <div class="row">
-                 <p class="text-center fs-1">Order Confirmed</p>
+                 <p class="text-center mt-3 fs-1">Order Confirmed</p>
                  </div>
                  <div class="card text-white-3" style="background-color: #dcdcd4;">
-                    <p class="text-center fs-4">THANK YOU! <br> FOR ORDER OUR PRODUCT<br>WISH YOUR DAISY BLOOM!</p>
+                    <p class="text-center fs-4 mt-3 mb-3">THANK YOU! <br> FOR ORDER OUR PRODUCT<br>WISH YOUR DAISY BLOOM!</p>
                  </div>
                  <div class="row">
                     <p class="text-center">Continue Shopping?
